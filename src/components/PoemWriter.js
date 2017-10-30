@@ -5,7 +5,7 @@ const isValidPoem = poem => {
   const poemLines = poem.split('\n').filter(l => l)
   const isRightAmountOfLines = poemLines.length === 3
   if (poem) {
-    
+
     const hasRightAmountOfWords = amountofWords(poemLines[0]) === 5 && amountofWords(poemLines[1]) === 3 && amountofWords(poemLines[2]) === 5
     return isRightAmountOfLines && hasRightAmountOfWords
   }
