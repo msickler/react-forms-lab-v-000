@@ -12,7 +12,7 @@ class TwitterMessage extends React.Component {
   }
 
   handleClick = (e) => {
-    var msg: e.target.value 
+    var msg: e.target.value
     this.setState({
       value: msg,
       charLeft: this.state.maxChars - msg.length
