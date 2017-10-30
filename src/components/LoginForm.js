@@ -16,9 +16,9 @@ class LoginForm extends React.Component {
     })
   }
 
-  login = e => {
+  login = event => {
     event.preventDefault();
-    (this.state.username && this.state.password) ? this.state : alert('Please enter both username and password')
+    (this.state.username && this.state.password) ? this.state : alert('Enter both username and password')
   }
 
   render() {
