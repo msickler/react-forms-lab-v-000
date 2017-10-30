@@ -17,8 +17,8 @@ class LoginForm extends React.Component {
   }
 
   login = event => {
-    event.preventDefault()
-    (this.state.username && this.state.password) ? this.state : alert("Enter both fields.")
+    event.preventDefault();
+    (this.state.username && this.state.password) ? this.state : alert('Please enter both username and password')
   }
 
   render() {
@@ -27,17 +27,25 @@ class LoginForm extends React.Component {
         <div>
           <label>
             Username
-            <input id="test-username" type="text" name="username" value={this.state.username} onChange={this.handleInputChange} />
+            <input id="test-username" 
+                   type="text" 
+                   name="username" 
+                   value={this.state.username} 
+                   onChange={this.handleInputChange} />
           </label>
         </div>
         <div>
           <label>
             Password
-            <input id="test-password" type="password" name="password" value={this.state.password} onChange={this.handleInputChange}/>
+            <input id="test-password" 
+                   type="password"
+                   name="username" 
+                   value={this.state.password} 
+                   onChange={this.handleInputChange}  />
           </label>
         </div>
         <div>
-          <button type="submit" >Log in</button>
+          <button type="submit">Log in</button>
         </div>
       </form>
     );
