@@ -16,33 +16,24 @@ class PoemWriter extends React.Component {
     super();
 
     this.state = {
-      content: '',
+      value: '',
       isValid: true
     };
   }
 
-  setPoemContent = event => {
-   const content = event.target.value;
+  setPoem = event => {
+   const value = event.target.value;
    this.setState({
-     content,
-     isValid: isValidPoem(content),
+     value,
+     isValid: isValidPoem(value),
    });
  }
 
   render() {
     return (
       <div>
-        <textarea
-          rows="3"
-          cols="60"
-          value={this.state.content}
-          onChange={this.setPoemContent}
-        />
-        {!this.state.isValid &&
-        <div
-          id="poem-validation-error"
-          style={{color: 'red'}}
-        >
+        <textarea rows="3" cols="60" value={this.state.content} onChange={this.setPoem} />
+        {!this.state.isValid && <div id="poem-validation-error"style={{color: 'red'}}>
           This poem is not written in the right structure!
         </div>
       }
