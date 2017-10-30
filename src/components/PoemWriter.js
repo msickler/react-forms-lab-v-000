@@ -8,21 +8,21 @@ const isValidPoem = poem => {
     const hasRightAmountOfWords = amountofWords(poemLines[0]) === 5 && amountofWords(poemLines[1]) === 3 && amountofWords(poemLines[2]) === 5
     return isRightAmountOfLines && hasRightAmountOfWords
   }
-  return false;
+  return false
 }
 
 class PoemWriter extends React.Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
       value: '',
       isValid: true
-    };
+    }
   }
 
   setPoem = event => {
-   const value = event.target.value;
+   const value = event.target.value
    this.setState({
      value,
      isValid: isValidPoem(value),
@@ -33,12 +33,13 @@ class PoemWriter extends React.Component {
     return (
       <div>
         <textarea rows="3" cols="60" value={this.state.content} onChange={this.setPoem} />
-        {!this.state.isValid && <div id="poem-validation-error"style={{color: 'red'}}>
-          This poem is not written in the right structure!
-        </div>
-      }
+        {!this.state.isValid && 
+          <div id="poem-validation-error"style={{color: 'red'}}>
+            This poem is not written in the right structure!
+          </div>
+        }
       </div>
-    );
+    )
   }
 }
 
